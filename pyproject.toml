@@ -9,7 +9,6 @@ python = "^3.8"
 flask-api = "^2.0"
 pandas = "^1.0.1"
 black = "^19.10b0"
-joblib = "^0.14.1"
 flask-cors = "^3.0.8"
 stringcase = "^1.2.0"
 

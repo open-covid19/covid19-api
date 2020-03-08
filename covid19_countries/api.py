@@ -1,13 +1,12 @@
 from flask_api import FlaskAPI
 from pathlib import Path
 import pandas as pd
-from joblib import Memory
 from io import StringIO
 from datetime import date, datetime
 from flask import jsonify
 from flask_cors import CORS
+import functools
 
-memory = Memory("_cache")
 
 
 app = FlaskAPI(__name__)
@@ -34,7 +33,7 @@ def recovered():
 def populations():
     return jsonify(fetch_data(POPULATIONS).to_dict(orient="records"))
 
-@memory.cache
+@functools.lru_cache
 def _fetch_data(url: str, d: datetime) -> pd.DataFrame:
     """
     cached request to github to avoid requesting this too often

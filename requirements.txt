@@ -7,7 +7,6 @@ flask-api==2.0
 flask-cors==3.0.8
 itsdangerous==1.1.0
 jinja2==2.11.1
-joblib==0.14.1
 markupsafe==1.1.1
 numpy==1.18.1
 pandas==1.0.1

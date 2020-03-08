@@ -1,3 +1,6 @@
+![Testing](https://github.com/pascalwhoop/covid19-api/workflows/Testing/badge.svg)
+
+
 - format with `black`
 - packages with `poetry`
 - requests with `requests` 
