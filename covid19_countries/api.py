@@ -33,7 +33,7 @@ def recovered():
 def populations():
     return jsonify(fetch_data(POPULATIONS).to_dict(orient="records"))
 
-@functools.lru_cache
+@functools.lru_cache(maxsize=1)
 def _fetch_data(url: str, d: datetime) -> pd.DataFrame:
     """
     cached request to github to avoid requesting this too often

@@ -1,4 +1,5 @@
 from covid19_countries import __version__
+from covid19_countries import api
 
 
 def test_version():
