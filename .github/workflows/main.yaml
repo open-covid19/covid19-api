@@ -1,0 +1,21 @@
+name: Build and Deploy
+on:
+  # every day
+  # schedule: 
+    # - cron: '0 0 * * *'
+  # or on push
+  push:
+    branches:
+    - master
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions-hub/gcloud@master
+      env:
+        PROJECT_ID: quixotic-elf-256313
+        APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+      with:
+        args: app deploy
