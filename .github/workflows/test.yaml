@@ -1,5 +1,5 @@
 
-name: Build and Deploy
+name: Testing
 on: push
 jobs:
   pytest:
