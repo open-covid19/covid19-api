@@ -5,11 +5,13 @@ from joblib import Memory
 from io import StringIO
 from datetime import date, datetime
 from flask import jsonify
+from flask_cors import CORS
 
 memory = Memory("_cache")
 
 
 app = FlaskAPI(__name__)
+CORS(app)
 
 CONFIRMED = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv"
 DEATHS = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv"
