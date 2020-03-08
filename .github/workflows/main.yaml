@@ -18,4 +18,4 @@ jobs:
         PROJECT_ID: quixotic-elf-256313
         APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
       with:
-        args: app deploy
+        args: app deploy app.yaml --quiet
