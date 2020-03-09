@@ -6,8 +6,6 @@
 
 <h2 align="center">Bootstrap</h2>
 
----
-
 ![Testing](https://github.com/pascalwhoop/covid19-api/workflows/Testing/badge.svg)
 
 ---
