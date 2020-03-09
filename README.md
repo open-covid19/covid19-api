@@ -25,6 +25,6 @@ _Should be pretty intuitive._
 To get requirements.txt for gcloud use `poetry export -f requirements.txt > requirements.txt`
 
 
-**Population data (population.csv) is from [data.worldbank.org](https://data.worldbank.org/indicator/SP.POP.TOTL?end=2016&start=2016&view=bar)**
+Population data (population.csv) is from [data.worldbank.org](https://data.worldbank.org/indicator/SP.POP.TOTL?end=2016&start=2016&view=bar)
 
 Stored it as a gist to grab it easily via `http call` here [gist.github.com](https://gist.github.com/pascalwhoop/a38a70f1fc60711856ca2e6fea79e4e3)
