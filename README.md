@@ -1,4 +1,4 @@
-![](https://user-images.githubusercontent.com/2068158/76208430-f1d45280-61ff-11ea-9115-9ecb77be8555.png)
+<img src="https://user-images.githubusercontent.com/2068158/76208430-f1d45280-61ff-11ea-9115-9ecb77be8555.png" width="200" height="200" alt="Open-Covid19" />
 
 ![Testing](https://github.com/pascalwhoop/covid19-api/workflows/Testing/badge.svg)
 
