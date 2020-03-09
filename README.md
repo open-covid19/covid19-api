@@ -13,7 +13,7 @@
 # Instructions
 
 - Format with `black`
-- Backages with `poetry`
+- Packages with `poetry`
 - Requests with `requests` 
 - API with `flask`
 - data wrangling with `pandas`
