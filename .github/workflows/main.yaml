@@ -18,4 +18,4 @@ jobs:
         PROJECT_ID: covid19-270622
         APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
       with:
-        args: app deploy app.yaml --quiet
+        args: app deploy app.yaml --no-promote
