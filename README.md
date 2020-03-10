@@ -7,10 +7,25 @@
 <h2 align="center">Bootstrap</h2>
 
 ![Testing](https://github.com/pascalwhoop/covid19-api/workflows/Testing/badge.svg)
+[![Join the chat at https://gitter.im/open-covid19/community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/open-covid19/community)
 
 ---
 
 # Instructions
+
+This goal of this project is to serve an API serving trusted data to a large base of consumers. To do this, we consume the data from upstream sources such as the WHO or John Hopkins. After a bit of cleaning and making the data more uniform, we then expose it as a REST API.
+
+## Current state
+
+- backend hosted by AppEngine, proxying data from CSSE and worldbank
+- built by github actions and deployed on push to master
+
+## Goal state
+
+- all data in Firebase and DB exposed as read only to the world
+- ETL pipelines which take data from upstream sources and write them to firebase (potentially with a middle step through BigQuery)
+
+## Facts 
 
 - Format with `black`
 - Packages with `poetry`
@@ -24,6 +39,7 @@ _Should be pretty intuitive._
 
 To get requirements.txt for gcloud use `poetry export -f requirements.txt > requirements.txt`
 
+## Data Sources
 
 Population data (population.csv) is from [data.worldbank.org](https://data.worldbank.org/indicator/SP.POP.TOTL?end=2016&start=2016&view=bar)
 
