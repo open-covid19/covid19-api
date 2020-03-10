@@ -3,8 +3,9 @@ from pathlib import Path
 import pandas as pd
 from io import StringIO
 from datetime import date, datetime
-from flask import jsonify
+from flask import jsonify, Response, redirect
 from flask_cors import CORS
+from covid19_countries.utils import recursive_camel_case
 import functools
 
 
@@ -17,21 +18,38 @@ DEATHS = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_
 RECOVERED = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv"
 POPULATIONS = "https://gist.githubusercontent.com/pascalwhoop/a38a70f1fc60711856ca2e6fea79e4e3/raw/0b45cceb7522e7eb7ac2219fb8f4421280949ea4/populations.csv"
 
-@app.route('/api/deaths')
+@app.route('/')
+def root():
+    return redirect("https://github.com/open-covid19/covid19-api", 302)
+
+@app.route('/v1/deaths')
 def deaths():
-    return jsonify(fetch_data(DEATHS).to_dict(orient="records"))
+    """
+    returns the deaths count data provided by CSSE of John Jopkins, proxied within the last 1h and converted to JSON
+    """
+    return fetch_and_clean_csv(DEATHS)
 
-@app.route('/api/confirmed')
+@app.route('/v1/confirmed')
 def confirmed():
-    return jsonify(fetch_data(CONFIRMED).to_dict(orient="records"))
+    """
+    returns the confirmed count data provided by CSSE of John Jopkins, proxied within the last 1h and converted to JSON
+    """
+    return fetch_and_clean_csv(CONFIRMED)
 
-@app.route('/api/recovered')
+@app.route('/v1/recovered')
 def recovered():
-    return jsonify(fetch_data(RECOVERED).to_dict(orient="records"))
+    """
+    returns the recovered count data provided by CSSE of John Jopkins, proxied within the last 1h and converted to JSON
+    """
+    return fetch_and_clean_csv(RECOVERED)
 
-@app.route('/api/populations')
+@app.route('/v1/populations')
 def populations():
-    return jsonify(fetch_data(POPULATIONS).to_dict(orient="records"))
+    """
+    returns the populations count per country as published by the world bank. This data is static. 
+    """
+    return fetch_and_clean_csv(POPULATIONS)
+
 
 @functools.lru_cache(maxsize=1)
 def _fetch_data(url: str, d: datetime) -> pd.DataFrame:
@@ -46,4 +64,7 @@ def fetch_data(url: str) -> pd.DataFrame:
     cache_buster = datetime(year=now.year, month=now.month, day=now.day, hour=now.hour)
     return _fetch_data(url, cache_buster)
 
-
+def fetch_and_clean_csv(url: str) -> Response:
+    data = fetch_data(url).to_dict(orient="records")
+    cleaned = recursive_camel_case(data)
+    return cleaned
