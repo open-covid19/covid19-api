@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h2 align="center">Bootstrap</h2>
+<h2 align="center">Covid19-API</h2>
 
 ![Testing](https://github.com/pascalwhoop/covid19-api/workflows/Testing/badge.svg)
 [![Join the chat at https://gitter.im/open-covid19/community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/open-covid19/community)
@@ -37,6 +37,8 @@ _Should be pretty intuitive._
 
 ---
 
+# Use GCloud?
+
 To get requirements.txt for gcloud use `poetry export -f requirements.txt > requirements.txt`
 
 ## Data Sources
@@ -44,3 +46,5 @@ To get requirements.txt for gcloud use `poetry export -f requirements.txt > requ
 Population data (population.csv) is from [data.worldbank.org](https://data.worldbank.org/indicator/SP.POP.TOTL?end=2016&start=2016&view=bar)
 
 Stored it as a gist to grab it easily via `http call` here [gist.github.com](https://gist.github.com/pascalwhoop/a38a70f1fc60711856ca2e6fea79e4e3)
+
+---
