@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;800&display=swap');
+
+$subnav-hero-bg: $primary-color;
+$subnav-hero-link-padding: 0.9rem 1rem;
+$subnav-hero-font-size: 0.75rem;
+$subnav-hero-link-opacity: 0.15;
+$subnav-hero-height: 450px;
+$subnav-hero-transition: all 0.35s ease-in-out;
+
+.subnav-hero-section {
+  text-align: center;
+  background: $subnav-hero-bg;
+  background-size: cover;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $subnav-hero-height;
+
+  .subnav-hero-headline {
+    color: $white;
+    background: url(../image/logo.png) no-repeat center center;
+    -webkit-background-size: 150px;
+         -o-background-size: 150px;
+            background-size: 150px;
+    padding: 150px 0 0 0;
+    height: 0;
+    overflow: hidden;
+  }
+  .subnav-hero-subline {
+    font-weight: bold;
+    color: $white;
+  }
+  .subnav-hero-text {
+    color: $white;
+  }
+}
+
+.subnav-hero-subnav {
+  float: none;
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
+
+  li {
+    float: none;
+    display: inline-block;
+
+    a {
+      background-size: 32px;
+      background-repeat:  no-repeat;
+      background-position: center 8px;
+      padding: $subnav-hero-link-padding;
+      font-size: $subnav-hero-font-size;
+      color: $secondary-color;
+      text-transform: uppercase;
+      display: block;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: $subnav-hero-transition;
+      padding-top: 46px;
+
+      &.is-active {
+        background-color: #fff;
+      }
+
+      &:hover {
+        background-color: $white;
+        a {
+          background-repeat:  no-repeat;
+          background-position: center 8px;
+        }
+      }
+    }
+    &.github a {
+      background-image: url(../image/logo-github.svg);
+    }
+    &.document a {
+      background-image: url(../image/saved-items.svg);
+    }
+    &.help a {
+      background-image: url(../image/support.svg);
+    }
+  }
+}
+
+
+.content {
+  background: #fff;
+  padding: 32px;
+  border: 1px solid #ccc;
+  border-top: 0;
+  -webkit-border-bottom-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  h1 {
+    font-weight: bold!important;
+    color: $secondary-color;
+  }
+  h2 {
+    font-weight: bold!important;
+    color: $secondary-color;
+  }
+  h3 {
+    font-weight: bold!important;
+    color: $secondary-color;
+  }
+}
