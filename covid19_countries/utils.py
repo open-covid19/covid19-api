@@ -1,6 +1,7 @@
 from typing import Dict, Union, List
 from stringcase import camelcase as camel
 from stringcase import lowercase as lower
+from stringcase import snakecase as snake
 import re
 
 def recursive_camel_case(obj):
@@ -26,5 +27,5 @@ def prep_n_camel(key: str) -> str:
     if re.match("^[0-9]", key) is not None:
         return key
     #else make it camel case
-    return camel(lower(re.sub('[^0-9a-zA-Z]+', '_', key)))
+    return camel(lower(snake(re.sub('[^0-9a-zA-Z]+', '_', key))))
 

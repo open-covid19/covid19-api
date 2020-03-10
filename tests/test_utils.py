@@ -18,6 +18,7 @@ def test_recursive_camel_case():
         "2/19/20": "i am a date"
     }
     result = utils.recursive_camel_case(messy)
+    print(result)
 
     assert "iAmMessy" in result
     assert "notSoFast" in result["iAmASubKey"]

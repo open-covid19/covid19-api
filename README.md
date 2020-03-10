@@ -7,6 +7,8 @@
 <h2 align="center">Covid19-API</h2>
 
 ![Testing](https://github.com/pascalwhoop/covid19-api/workflows/Testing/badge.svg)
+![Deploy](https://github.com/open-covid19/covid19-api/workflows/Deploy/badge.svg)
+
 [![Join the chat at https://gitter.im/open-covid19/community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/open-covid19/community)
 
 ---
@@ -22,8 +24,8 @@ This goal of this project is to serve an API serving trusted data to a large bas
 
 ## Goal state
 
-- all data in Firebase and DB exposed as read only to the world
-- ETL pipelines which take data from upstream sources and write them to firebase (potentially with a middle step through BigQuery)
+- all data in Firebase or other DB and exposed as read only to the world
+- ETL pipelines which take data from upstream sources and write them to DB (potentially with a middle step through BigQuery)
 
 ## Facts 
 
